@@ -6,7 +6,11 @@ namespace esidatascrape
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            KeyVaultHelper helper = new KeyVaultHelper();
+            string clientid = helper.GetKeyVaultValue("ClientId");
+            string secretkey = helper.GetKeyVaultValue("SecretKey");
+            string esikey = helper.GetKeyVaultValue("esikey");
+            Console.WriteLine($"{clientid}\n{secretkey}\n{esikey}");
         }
     }
 }
